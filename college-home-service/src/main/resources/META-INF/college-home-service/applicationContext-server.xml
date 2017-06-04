@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:sca="http://www.springframework.org/schema/sca"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+            http://www.springframework.org/schema/sca http://www.springframework.org/schema/sca/spring-sca.xsd">
+
+	<context:component-scan base-package="com.ptteng.college.home" />
+
+	
+		<sca:service name="teacherService"
+		type="com.ptteng.college.home.service.TeacherService" target="teacherService" />
+		
+	
+		<sca:service name="graduateService"
+		type="com.ptteng.college.home.service.GraduateService" target="graduateService" />
+		
+	
+		<sca:service name="exchangeService"
+		type="com.ptteng.college.home.service.ExchangeService" target="exchangeService" />
+		
+	
+		<sca:service name="activityService"
+		type="com.ptteng.college.home.service.ActivityService" target="activityService" />
+		
+	
+		<sca:service name="admissionEmploymentService"
+		type="com.ptteng.college.home.service.AdmissionEmploymentService" target="admissionEmploymentService" />
+		
+	
+		<sca:service name="articleService"
+		type="com.ptteng.college.home.service.ArticleService" target="articleService" />
+		
+	
+		<sca:service name="majorService"
+		type="com.ptteng.college.home.service.MajorService" target="majorService" />
+		
+	
+		<sca:service name="internshipService"
+		type="com.ptteng.college.home.service.InternshipService" target="internshipService" />
+
+	<!--<sca:service name="recordsService"-->
+				 <!--type="com.ptteng.college.home.service.RecordsService" target="recordsService" />-->
+
+	<!--<sca:service name="managerService"-->
+				 <!--type="com.ptteng.college.home.service.ManagerService" target="managerService"/>-->
+
+	<!--<sca:service name="moduleService"-->
+				 <!--type="com.ptteng.college.home.service.ModuleService" target="moduleService"/>-->
+
+
+	<!--<sca:service name="roleService"-->
+				 <!--type="com.ptteng.college.home.service.RoleService" target="roleService"/>-->
+
+
+	<!--<sca:service name="roleModuleService"-->
+				 <!--type="com.ptteng.college.home.service.RoleModuleService" target="roleModuleService"/>-->
+	 <!---->
+	<!---->
+	
+
+
+	
+
+
+
+	
+		
+	<bean id="teacherService"
+		class="com.ptteng.college.home.service.impl.TeacherServiceImpl" parent="baseDaoService">
+
+	</bean>
+		
+	<bean id="graduateService"
+		class="com.ptteng.college.home.service.impl.GraduateServiceImpl" parent="baseDaoService">
+
+	</bean>
+		
+	<bean id="exchangeService"
+		class="com.ptteng.college.home.service.impl.ExchangeServiceImpl" parent="baseDaoService">
+
+	</bean>
+		
+	<bean id="activityService"
+		class="com.ptteng.college.home.service.impl.ActivityServiceImpl" parent="baseDaoService">
+
+	</bean>
+		
+	<bean id="admissionEmploymentService"
+		class="com.ptteng.college.home.service.impl.AdmissionEmploymentServiceImpl" parent="baseDaoService">
+
+	</bean>
+		
+	<bean id="articleService"
+		class="com.ptteng.college.home.service.impl.ArticleServiceImpl" parent="baseDaoService">
+
+	</bean>
+		
+	<bean id="majorService"
+		class="com.ptteng.college.home.service.impl.MajorServiceImpl" parent="baseDaoService">
+
+	</bean>
+		
+	<bean id="internshipService"
+		class="com.ptteng.college.home.service.impl.InternshipServiceImpl" parent="baseDaoService">
+
+	</bean>
+
+	<!--<bean id="recordsService"-->
+          <!--class="com.ptteng.college.pub.service.impl.RecordsServiceImpl" parent="baseDaoService">-->
+
+	<!--<bean id="managerService"-->
+          <!--class="com.ptteng.college.pub.service.impl.ManagerServiceImpl" parent="baseDaoService">-->
+
+	<!--</bean>-->
+
+	<!--<bean id="moduleService"-->
+          <!--class="com.ptteng.college.pub.service.impl.ModuleServiceImpl" parent="baseDaoService">-->
+
+	<!--</bean>-->
+
+	<!--<bean id="roleService"-->
+          <!--class="com.ptteng.college.pub.service.impl.RoleServiceImpl" parent="baseDaoService">-->
+
+	<!--</bean>-->
+
+	<!--<bean id="roleModuleService"-->
+          <!--class="com.ptteng.college.pub.service.impl.RoleModuleServiceImpl" parent="baseDaoService">-->
+
+	<!--</bean>-->
+
+<bean id="dao" class="com.gemantic.dal.dao.impl.CompositeDaoImpl" />
+
+	<bean id="baseDaoService"
+		class="com.ptteng.common.dao.BaseDaoServiceImpl">
+		<property name="dao" ref="dao" />
+	</bean>
+
+
+
+
+
+
+	<!-- performance -->
+	<aop:aspectj-autoproxy />
+	<bean id="aroundLoggingTime" class="com.gemantic.common.stat.aop.time.AroundTimeConsume" />
+	<aop:config>
+		<aop:aspect ref="aroundLoggingTime">
+			<aop:pointcut id="publicServiceMethod"
+				expression="execution(* com.gemantic..service.*.*(..)) " />
+			<aop:around method="around" pointcut-ref="publicServiceMethod" />
+		</aop:aspect>
+	</aop:config>
+
+</beans>
+

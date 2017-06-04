@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<datasources>
+		<ds name="college_home"
+			driverClassName="com.mysql.jdbc.Driver"
+			url="jdbc:mysql://db.college:3306/college_home?defaultBatchValue=1000"
+			username="arthur"
+			password="arthur"
+			maxActive="50"
+			maxIdle="50"
+			maxWait="10"
+            check="true"
+		/>
+		 <ds name="idCenterDS"
+			driverClassName="com.mysql.jdbc.Driver"
+			url="jdbc:mysql://db.college:3306/resources?defaultBatchValue=1000"
+			username="arthur"
+			password="arthur"
+			maxActive=""
+			maxIdle=""
+			maxWait=""
+            check="true"
+		/>  
+	</datasources>
+	<groups>
+		<group name="college_home" master="college_home"  />			
+	</groups>
+</root>
+
+

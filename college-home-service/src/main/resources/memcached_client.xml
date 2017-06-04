@@ -1,0 +1,83 @@
+<!--<?xml version="1.0" encoding="UTF-8" ?>-->
+<!--<root>-->
+	<!--<cache>-->
+		<!--<datasource-->
+			<!--name="default"-->
+			<!--timeout="300"-->
+			<!--port="11211"-->
+			<!--server="cache.college.home"-->
+			<!--maxActive="18" -->
+			<!--maxIdle="18" -->
+			<!--maxWait="-1" -->
+		<!--/>-->
+	<!--</cache>-->
+	<!--<regions>-->
+		<!---->
+						<!--<region name="com.ptteng.college.home.model.Teacher" listenerClass="com.gemantic.dal.cache.listener.DefaultListenerImpl" strategyClass="com.gemantic.memcached.route.strategy.DefaultStrategy">-->
+			<!--<keyPattern value="[0-9]$" datasource ="default"/>-->
+		<!--</region>-->
+		<!---->
+						<!--<region name="com.ptteng.college.home.model.Graduate" listenerClass="com.gemantic.dal.cache.listener.DefaultListenerImpl" strategyClass="com.gemantic.memcached.route.strategy.DefaultStrategy">-->
+			<!--<keyPattern value="[0-9]$" datasource ="default"/>-->
+		<!--</region>-->
+		<!---->
+						<!--<region name="com.ptteng.college.home.model.Exchange" listenerClass="com.gemantic.dal.cache.listener.DefaultListenerImpl" strategyClass="com.gemantic.memcached.route.strategy.DefaultStrategy">-->
+			<!--<keyPattern value="[0-9]$" datasource ="default"/>-->
+		<!--</region>-->
+		<!---->
+						<!--<region name="com.ptteng.college.home.model.Activity" listenerClass="com.gemantic.dal.cache.listener.DefaultListenerImpl" strategyClass="com.gemantic.memcached.route.strategy.DefaultStrategy">-->
+			<!--<keyPattern value="[0-9]$" datasource ="default"/>-->
+		<!--</region>-->
+		<!---->
+						<!--<region name="com.ptteng.college.home.model.AdmissionEmployment" listenerClass="com.gemantic.dal.cache.listener.DefaultListenerImpl" strategyClass="com.gemantic.memcached.route.strategy.DefaultStrategy">-->
+			<!--<keyPattern value="[0-9]$" datasource ="default"/>-->
+		<!--</region>-->
+		<!---->
+						<!--<region name="com.ptteng.college.home.model.Article" listenerClass="com.gemantic.dal.cache.listener.DefaultListenerImpl" strategyClass="com.gemantic.memcached.route.strategy.DefaultStrategy">-->
+			<!--<keyPattern value="[0-9]$" datasource ="default"/>-->
+		<!--</region>-->
+		<!---->
+						<!--<region name="com.ptteng.college.home.model.Major" listenerClass="com.gemantic.dal.cache.listener.DefaultListenerImpl" strategyClass="com.gemantic.memcached.route.strategy.DefaultStrategy">-->
+			<!--<keyPattern value="[0-9]$" datasource ="default"/>-->
+		<!--</region>-->
+		<!---->
+						<!--<region name="com.ptteng.college.home.model.Internship" listenerClass="com.gemantic.dal.cache.listener.DefaultListenerImpl" strategyClass="com.gemantic.memcached.route.strategy.DefaultStrategy">-->
+			<!--<keyPattern value="[0-9]$" datasource ="default"/>-->
+		<!--</region>-->
+		<!---->
+										<!---->
+						<!---->
+		<!---->
+							<!---->
+						<!---->
+		<!---->
+							<!---->
+						<!---->
+		<!---->
+							<!---->
+						<!---->
+		<!---->
+							<!---->
+						<!---->
+		<!---->
+							<!---->
+						<!---->
+		<!---->
+							<!---->
+						<!---->
+		<!---->
+							<!---->
+						<!---->
+		<!---->
+					<!---->
+			<!---->
+			<!---->
+			<!---->
+		<!---->
+		<!---->
+	<!---->
+
+
+	<!--</regions>-->
+<!--</root>-->
+

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<composite xmlns="http://www.osoa.org/xmlns/sca/1.0" xmlns:tuscany="http://tuscany.apache.org/xmlns/sca/1.0"
+    xmlns:scallop="http://scallop/xmlns/sca/1.0"
+    targetNamespace="http://CollegeHomeComponent" xmlns:sample="http://CollegeHomeComponent" name="CollegeHomeComponent">
+
+
+  <component name="CollegeHomeComponent">
+    <implementation.spring location="META-INF/college-home-service/applicationContext-server.xml" />
+  </component>
+  
+	  <service name="teacherService" promote="CollegeHomeComponent/teacherService">
+    <interface.java interface="com.ptteng.college.home.service.TeacherService"/> 
+    <scallop:binding.rmi host="localhost" port="10760" serviceName="TeacherRMIService"/>     
+  </service>
+	  <service name="graduateService" promote="CollegeHomeComponent/graduateService">
+    <interface.java interface="com.ptteng.college.home.service.GraduateService"/> 
+    <scallop:binding.rmi host="localhost" port="10760" serviceName="GraduateRMIService"/>     
+  </service>
+	  <service name="exchangeService" promote="CollegeHomeComponent/exchangeService">
+    <interface.java interface="com.ptteng.college.home.service.ExchangeService"/> 
+    <scallop:binding.rmi host="localhost" port="10760" serviceName="ExchangeRMIService"/>     
+  </service>
+	  <service name="activityService" promote="CollegeHomeComponent/activityService">
+    <interface.java interface="com.ptteng.college.home.service.ActivityService"/> 
+    <scallop:binding.rmi host="localhost" port="10760" serviceName="ActivityRMIService"/>     
+  </service>
+	  <service name="admissionEmploymentService" promote="CollegeHomeComponent/admissionEmploymentService">
+    <interface.java interface="com.ptteng.college.home.service.AdmissionEmploymentService"/> 
+    <scallop:binding.rmi host="localhost" port="10760" serviceName="AdmissionEmploymentRMIService"/>     
+  </service>
+	  <service name="articleService" promote="CollegeHomeComponent/articleService">
+    <interface.java interface="com.ptteng.college.home.service.ArticleService"/> 
+    <scallop:binding.rmi host="localhost" port="10760" serviceName="ArticleRMIService"/>     
+  </service>
+	  <service name="majorService" promote="CollegeHomeComponent/majorService">
+    <interface.java interface="com.ptteng.college.home.service.MajorService"/> 
+    <scallop:binding.rmi host="localhost" port="10760" serviceName="MajorRMIService"/>     
+  </service>
+	  <service name="internshipService" promote="CollegeHomeComponent/internshipService">
+    <interface.java interface="com.ptteng.college.home.service.InternshipService"/> 
+    <scallop:binding.rmi host="localhost" port="10760" serviceName="InternshipRMIService"/>     
+  </service>
+    <!--<service name="managerService" promote="collegeHomeComponent/managerService">-->
+        <!--<interface.java interface="com.ptteng.college.home.service.ManagerService"/>-->
+        <!--<scallop:binding.rmi host="localhost" port="10528" serviceName="ManagerRMIService"/>-->
+    <!--</service>-->
+
+    <!--<service name="moduleService" promote="collegeHomeComponent/moduleService">-->
+        <!--<interface.java interface="com.ptteng.college.home.service.ModuleService"/>-->
+        <!--<scallop:binding.rmi host="localhost" port="10528" serviceName="ModuleRMIService"/>-->
+    <!--</service>-->
+
+    <!--<service name="roleService" promote="collegeHomeComponent/roleService">-->
+        <!--<interface.java interface="com.ptteng.college.home.service.RoleService"/>-->
+        <!--<scallop:binding.rmi host="localhost" port="10528" serviceName="RoleRMIService"/>-->
+    <!--</service>-->
+
+    <!--<service name="roleModuleService" promote="collegeHomeComponent/roleModuleService">-->
+        <!--<interface.java interface="com.ptteng.college.home.service.RoleModuleService"/>-->
+        <!--<scallop:binding.rmi host="localhost" port="10528" serviceName="RoleModuleRMIService"/>-->
+    <!--</service>-->
+
+
+
+
+
+
+
+
+</composite>
+

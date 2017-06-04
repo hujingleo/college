@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dal>
+	<list>
+		
+				
+		
+		<config>
+			<path>teacher_dao.xml</path>
+		</config>
+				
+		
+		<config>
+			<path>graduate_dao.xml</path>
+		</config>
+				
+		
+		<config>
+			<path>exchange_dao.xml</path>
+		</config>
+				
+		
+		<config>
+			<path>activity_dao.xml</path>
+		</config>
+				
+		
+		<config>
+			<path>admissionEmployment_dao.xml</path>
+		</config>
+				
+		
+		<config>
+			<path>article_dao.xml</path>
+		</config>
+				
+		
+		<config>
+			<path>major_dao.xml</path>
+		</config>
+				
+		
+		<config>
+			<path>internship_dao.xml</path>
+		</config>
+						
+		
+		
+	</list>
+
+	<default>
+		<dbStrategy name=""
+			clasz="com.gemantic.dal.route.strategy.DefaultStrategy">
+			<pattern value="[0-9]$" group="g1" />
+		</dbStrategy>
+		<listenerClass className="" />
+		<idCenterDS ds="idCenterDS" />
+	</default>
+</dal>                

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dal>
+	<route>
+		<object name="com.ptteng.college.home.model.Teacher"
+			listenerClass="" strategyProperty="">
+			
+			
+			
+						
+			
+						
+			
+					<list name="getTeacherIdsAll" sqlitem="select id from teacher where 1 = 1 order by create_at desc"
+				keyProperty="version" valueProperty="id" keyColumn="version" />
+			
+			<dbStrategy name="mutiDS"
+                clasz="com.gemantic.dal.route.strategy.DefaultStrategy">  <pattern value="[0-9]$" group="college_home" />
+            </dbStrategy>
+			
+		</object>
+	</route>
+</dal>

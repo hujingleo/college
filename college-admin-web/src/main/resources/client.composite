@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<composite xmlns="http://www.osoa.org/xmlns/sca/1.0" xmlns:tuscany="http://tuscany.apache.org/xmlns/sca/1.0" xmlns:scallop="http://scallop/xmlns/sca/1.0"
+           targetNamespace="http://sns.sohu.com/home/composite" xmlns:sample="http://sns.sohu.com/home/composite" name="HomeComposite">
+	
+
+
+
+
+    	
+	
+	 <!-- CollegeHomeComponent -->
+	 
+	     <component name = "TeacherServiceComponent">
+    	<implementation.java class = "com.ptteng.sca.college.home.client.TeacherSCAClient"/>
+    	   
+    	<reference name = "teacherService">
+    		<scallop:binding.rmi registryName = "teacher-college-home-service-rmi" serviceName="TeacherRMIService"/>
+    	</reference>
+    </component >
+        <component name = "GraduateServiceComponent">
+    	<implementation.java class = "com.ptteng.sca.college.home.client.GraduateSCAClient"/>
+    	   
+    	<reference name = "graduateService">
+    		<scallop:binding.rmi registryName = "graduate-college-home-service-rmi" serviceName="GraduateRMIService"/>
+    	</reference>
+    </component >
+        <component name = "ExchangeServiceComponent">
+    	<implementation.java class = "com.ptteng.sca.college.home.client.ExchangeSCAClient"/>
+    	   
+    	<reference name = "exchangeService">
+    		<scallop:binding.rmi registryName = "exchange-college-home-service-rmi" serviceName="ExchangeRMIService"/>
+    	</reference>
+    </component >
+        <component name = "ActivityServiceComponent">
+    	<implementation.java class = "com.ptteng.sca.college.home.client.ActivitySCAClient"/>
+    	   
+    	<reference name = "activityService">
+    		<scallop:binding.rmi registryName = "activity-college-home-service-rmi" serviceName="ActivityRMIService"/>
+    	</reference>
+    </component >
+        <component name = "AdmissionEmploymentServiceComponent">
+    	<implementation.java class = "com.ptteng.sca.college.home.client.AdmissionEmploymentSCAClient"/>
+    	   
+    	<reference name = "admissionEmploymentService">
+    		<scallop:binding.rmi registryName = "admissionEmployment-college-home-service-rmi" serviceName="AdmissionEmploymentRMIService"/>
+    	</reference>
+    </component >
+        <component name = "ArticleServiceComponent">
+    	<implementation.java class = "com.ptteng.sca.college.home.client.ArticleSCAClient"/>
+    	   
+    	<reference name = "articleService">
+    		<scallop:binding.rmi registryName = "article-college-home-service-rmi" serviceName="ArticleRMIService"/>
+    	</reference>
+    </component >
+        <component name = "MajorServiceComponent">
+    	<implementation.java class = "com.ptteng.sca.college.home.client.MajorSCAClient"/>
+    	   
+    	<reference name = "majorService">
+    		<scallop:binding.rmi registryName = "major-college-home-service-rmi" serviceName="MajorRMIService"/>
+    	</reference>
+    </component >
+        <component name = "InternshipServiceComponent">
+    	<implementation.java class = "com.ptteng.sca.college.home.client.InternshipSCAClient"/>
+    	   
+    	<reference name = "internshipService">
+    		<scallop:binding.rmi registryName = "internship-college-home-service-rmi" serviceName="InternshipRMIService"/>
+    	</reference>
+    </component >
+
+
+	<!-- CollegePubComponent -->
+	<component name = "ManagerServiceComponent">
+		<implementation.java class = "com.ptteng.sca.college.home.client.ManagerSCAClient"/>
+
+		<reference name = "managerService">
+			<scallop:binding.rmi registryName = "manager-college-pub-service-rmi" serviceName="ManagerRMIService"/>
+		</reference>
+	</component >
+	<component name = "ModuleServiceComponent">
+		<implementation.java class = "com.ptteng.sca.college.home.client.ModuleSCAClient"/>
+
+		<reference name = "moduleService">
+			<scallop:binding.rmi registryName = "module-college-pub-service-rmi" serviceName="ModuleRMIService"/>
+		</reference>
+	</component >
+	<component name = "RoleServiceComponent">
+		<implementation.java class = "com.ptteng.sca.college.home.client.RoleSCAClient"/>
+
+		<reference name = "roleService">
+			<scallop:binding.rmi registryName = "role-college-pub-service-rmi" serviceName="RoleRMIService"/>
+		</reference>
+	</component >
+	<component name = "RoleModuleServiceComponent">
+		<implementation.java class = "com.ptteng.sca.college.home.client.RoleModuleSCAClient"/>
+
+		<reference name = "roleModuleService">
+			<scallop:binding.rmi registryName = "roleModule-college-pub-service-rmi" serviceName="RoleModuleRMIService"/>
+		</reference>
+	</component >
+
+
+</composite>
+
